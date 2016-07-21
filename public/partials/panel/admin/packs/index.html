@@ -1,0 +1,40 @@
+<section class="container section-first">
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/admin/dash"><span class="typcn typcn-device-desktop"></span></a></li>
+          <li class="active"><a href=""><span class="typcn typcn-gift green"></span> Packs</a></li>
+        </ol>
+        <div class="row">
+            <div class="title">
+                <h2><span class="typcn typcn-edit green"></span> Packs</h2>
+                <div class="separator-container">
+                    <div class="separator line-separator"><span class="typcn typcn-wi-fi"></span></div>
+                </div>
+                <p>Packs on this system. </p>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-2 text-right">
+                        <a href="/admin/packs/create" class="btn btn-success">Create</a>
+                    </div>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" ng-model="search" placeholder="Escriba para filtrar" ng-model="search.name">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="row in data | filter: search">
+                    <a href="/admin/packs/{{row.id}}">
+                        <div class="tile-box">
+                            <h4><span class="typcn typcn-gift"></span> {{row.title}}</h4>
+                            <div class="text-left">
+                                <small><span class="typcn typcn-link"></span> {{row.slug}}</small> <small><span class="typcn typcn-tags"></span> {{row.price}}</small>
+                                <small><span class="typcn typcn-calendar"></span> {{row.created}}</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="alert alert-info alert-icon">
+                    <span class="typcn typcn-info"></span> 
+                    <p>Recuerda usar las etiquetas para agruparlos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

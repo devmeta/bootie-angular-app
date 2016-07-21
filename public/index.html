@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/css/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/typicons/font/typicons.min.css" />
+    <link rel="stylesheet" href="/css/summernote.css" ng-if="AuthService.isAuthenticated" />
+    <link rel="stylesheet" href="/css/dropzone.css" ng-if="AuthService.isAuthenticated" />
+    <link rel="stylesheet" href="/css/mapbox.css" ng-if="AuthService.isAuthenticated" />
+    <link rel="stylesheet" href="/css/animations.css" />
+    <link rel="stylesheet" href="/css/gibson.css" />
+    <link rel="stylesheet" href="/css/rubick.css" />
+    <link rel="stylesheet" href="/css/toaster.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <base href="/" />
+    <title>Project</title>
+</head>
+<body ng-app="app">
+    <div class="wrapper">
+        <!-- Header -->
+        <div class="app-header" ng-controller="header">
+            <app-header isauthenticated="{{ isAuthenticated() }}"></app-header>
+        </div>
+        <div class="loading" data-loading></div>
+    	<!-- ng-view for see template content -->
+    	<div ng-view></div>
+        <!-- Footer -->
+
+        <footer class="footer">
+            <div class="container">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="/contact">
+                            Contacto
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/blog">
+                            Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/tag/security">
+                            Seguridad
+                            </a>
+                        </li>                            
+                    </ul>
+                </nav>
+                <div class="social-area pull-right">
+                        <a target="_blank" href="https://twitter.com/Project">
+                            <span class="typcn typcn-social-twitter"></span>
+                        </a>
+                        <a target="_blank" href="mailto:info@Project.com.ar">
+                            <span class="typcn typcn-mail"></span>
+                        </a>
+                        <a href="" title="Cerrar sesión" data-placement="right" ng-click="logout()" ng-if="jwt"><span class="typcn typcn-key-outline"></span></a>
+                            <a href="/login" title="Iniciar sesión" data-placement="right" ng-if="!jwt"><span class="typcn typcn-key"></span></a>
+                </div>
+                <div class="copyright">
+                    <a href="" ng-click="backtop()"><span class="typcn typcn-wi-fi"></span> 2016 Project</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+    <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/dropzone.min.js" ng-if="AuthService.isAuthenticated"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.min.js"></script>
+    <script src="/js/angular-animate.min.js" ></script>
+    <script src="/js/angular-storage.min.js" ></script>
+    <script src="/js/angular-readable-time.js" ></script>
+    <script src="/js/angular-summernote.js" ng-if="AuthService.isAuthenticated"></script>
+    <script src="/js/mapbox.js" ng-if="AuthService.isAuthenticated"></script>
+    <script src="/js/jquery-ui-1.10.4.custom.min.js" ng-if="AuthService.isAuthenticated"></script>
+    <script src="/js/angular-dropzone.js" ng-if="AuthService.isAuthenticated"></script>
+    <script src="/js/summernote.js" ng-if="AuthService.isAuthenticated"></script>
+    <script src="/js/modernizr.js"></script>
+    <script src="/js/toaster.js"></script>
+    <script src="/js/rubick_pres.js"></script>
+    <script src="/app/auth.js"></script>
+    <script src="/app/api.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/interceptor.js"></script>
+    <script src="/app/directives.js"></script>
+    <script src="/app/controllers.js"></script>
+    <script src="/app/config.js"></script>
+</html>

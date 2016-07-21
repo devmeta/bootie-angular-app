@@ -1,0 +1,70 @@
+<section class="container section-first">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+          <li><a href="/main"><span class="typcn typcn-home-outline"></span></a></li>
+          <li class="active"><a href=""><span class="typcn typcn-key-outline green"></span> Iniciar sesión</a></li>
+        </ol>
+    </div>
+    <h1 class="page-header"><span class="typcn typcn-key-outline green"></span> Iniciar sesión</h1>
+    <div class="col-sm-10 col-sm-offset-1">
+        <div id="login-box" class="login-box visible widget-box no-border">
+            <div class="widget-body">
+                <div class="widget-main">
+                    <form name="loginForm" class="form-horizontal" role="form" ng-if="!AuthService.isAuthenticated">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="email"> Email / Tel </label>
+                            <div class="col-sm-7">
+                               <span class="block input-icon input-icon-right">
+                                    <input type="text" class="form-control" placeholder="Email / Phone" name="email" ng-model="login.email" required focus/>
+                                    <i class="ace-icon fa fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="password"> Contraseña </label>
+                            <div class="col-sm-7">
+                               <span class="block input-icon input-icon-right">
+                                    <input type="password" class="form-control" placeholder="Password" ng-model="login.password" required/>
+                                    <i class="ace-icon fa fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="password"> Recordarme en este dispositivo </label>
+
+                            <div class="col-sm-7 text-right">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" ng-model="login.remember" checked>
+                                    <label class="onoffswitch-label" for="myonoffswitch">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>                            
+                        <div class="space"></div>
+                         <div class="clearfix">
+                            <div class="row">
+                                <label class="col-sm-3 control-label no-padding-right"> </label>
+                                <div class="col-sm-7">
+                                    <button type="submit" class="width-35 pull-right btn" ng-click="doLogin(login)" data-ng-disabled="loginForm.$invalid">
+                                        <i class="ace-icon fa fa-key"></i>
+                                        <span>Iniciar sesión</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group-control">&nbsp;</div>
+                        <div class="alert alert-success">
+                             No tienes una cuenta? <a href="/signup">Crear cuenta</a>
+                            </div>
+                    </form>
+
+                    <div class="alert alert-success" ng-if="AuthService.isAuthenticated">Ya tienes una sesión activa ¿deseas finalizar la sesión? <a href="" ng-click="logout();">Logout</a></div>
+                    <div class="group-control">&nbsp;</div>
+                    
+                </div><!-- /widget-main -->
+            </div><!-- /widget-body -->
+        </div><!-- /login-box -->
+    </div><!-- /position-relative -->
+</section>

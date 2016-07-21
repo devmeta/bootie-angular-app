@@ -1,0 +1,91 @@
+<section class="container section-first">
+    <ol class="breadcrumb">
+      <li><a href="/main"><span class="typcn typcn-home-outline"></span></a></li>
+      <li class="active"><a href=""><span class="typcn typcn-user-add-outline green"></span> Crear Cuenta</a></li>
+    </ol>
+
+    <h1 class="page-header"><span class="typcn typcn-user-add-outline green"></span> Crear cuenta</h1>
+    <div class="row">
+        <div class="space-6"></div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                    <div class="widget-main">
+
+                        <form name="signupForm" class="form-horizontal" role="form" ng-if="!jwt">
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="email">Email</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input type="text" class="form-control" placeholder="Email" name="email" ng-model="signup.email" focus/>
+                                        <span ng-show="signupForm.email.$error.email" class="help-inline">Email no válido</span> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="password">Contraseña</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="password" class="form-control" name = "password" placeholder="Password" ng-model="signup.password" required/>
+                                <small class="errorMessage" data-ng-show="signupForm.password.$dirty && signupForm.password.$invalid"> Ingresa contraseña.</small>
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="password2">Confirme contraseña</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="password" class="form-control" name="password2" placeholder="Password Again" ng-model="signup.password2" password-match="signup.password" required/>                                
+                                <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.required"> Ingrese contraseña otra vez.</small>
+
+                               <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.passwordNoMatch && !signupForm.password2.$error.required"> Las contraseñas no coinciden.</small>
+
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="name">Nombre</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Name" ng-model="signup.name" />
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="phone">Tel</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Phone" name="phone" ng-model="signup.phone"/>
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="address">Dirección</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Address" ng-model="signup.address" />
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="lbl col-sm-5"> </span>
+                                <div class="col-sm-7">
+                                    <button type="submit" class="width-35 pull-right btn" ng-click="signUp(signup)" data-ng-disabled="signupForm.$invalid">
+                                        Crear cuenta
+                                    </button>
+                                </div>
+                            </div>
+                            </fieldset>
+                            <span class="lbl col-sm-5"> </span>
+                            <div class="col-sm-7">Ya tienes cuenta? <a href="/login">Iniciar sesión</a>
+                            </div>
+                        </form>
+                        <div class="col-sm-7" ng-if="jwt">Ya tienes una sesión activa ¿deseas finalizar la sesión? <a href="" ng-click="logout();">Logout</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- /.page-content -->

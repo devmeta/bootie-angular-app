@@ -1,0 +1,44 @@
+<section class="section section-we-do-2 section-first">
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/"><span class="typcn typcn-home-outline"></span>&nbsp;</a></li>
+          <li><a href="/packs"><span class="typcn typcn-flow-children"> Planes</span></a></li>
+          <li class="active"><a href=""><span class="typcn typcn-{{data[0].typcn}} green"></span> {{data[0].title}}</a></li>
+        </ol>
+        <div class="row">
+            <div class="title add-animation">
+                <h2>{{data[0].title}}</h2>
+                <div class="separator-container">
+                    <div class="separator line-separator"><span class="typcn typcn-wi-fi"></span></div>
+                </div>
+                <p>{{data[0].caption}}</p>
+            </div>
+        </div>
+        <section class="container show-source">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading text-center">
+                            <div class="icon">
+                                <span class="typcn typcn-{{data[0].typcn}}"></span>
+                            </div>
+                            <h3 class="">{{data[0].title}}</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p class="lead" style="font-size:30px"><strong>ARS {{data[0].price}} / año</strong></p>
+                        </div>
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item" ng-repeat="line in lines[0]"><span ng-bind-html="line | sanitize"></li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-{{data[0].color}}" href="">Buy now</a>
+                        </div><!--/panel-footer-->
+                    </div><!--/panel-->
+                </div><!--/col-->
+                <div class="alert text-muted">
+                    <p ng-bind-html="data[0].fulltext | sanitize"></p>
+                </div>                 
+            </div><!--/row-->
+        </section><!--/container-->
+    </div>
+</section>

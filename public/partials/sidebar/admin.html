@@ -1,0 +1,37 @@
+    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-burger" role="navigation">
+        <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+        <div class="container">
+            <div class="navbar-header">
+                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar bar1"></span>
+                <span class="icon-bar bar2"></span>
+                <span class="icon-bar bar3"></span>                
+                </button>
+                <a href="/" class="navbar-brand"><span class="typcn typcn-wi-fi-outline text-info"></span> Project</a>
+                <div class="whoami pull-right"><a href="/credential"><span class="text text-{{jwt.role.role == 'admin' ? 'success' : 'info'}}"><span class="typcn typcn-business-card"></span> </span>&nbsp;</a></div>
+
+            </div>
+			<div class="collapse navbar-collapse">
+			    <ul class="nav navbar-nav navbar-right navbar-uppercase">
+			        <li class="social-links">
+			            <a href="/admin/dash" title="Escritorio">
+			                <span class="typcn typcn-device-desktop"></span>
+			            </a>
+			            <a href="" title="Cerrar sesión" data-placement="right" ng-click="logout()" ng-if="jwt">
+			            	<span class="typcn typcn-key-outline"></span>
+			            </a>
+			        </li>
+			        <li>
+			        	<a href="/admin/users"><span class="typcn typcn-user"></span> Users</a>
+			        </li>
+			        <li>
+			        	<a href="/admin/posts"><span class="typcn typcn-edit"></span> Posts</a>
+			        </li>
+			        <li>
+			        	<a href="/admin/packs"><span class="typcn typcn-gift"></span> Packs</a>
+			        </li>
+			    </ul>  
+			 </div>
+        </div>
+    </nav>

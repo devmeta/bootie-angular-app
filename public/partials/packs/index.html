@@ -1,0 +1,41 @@
+<section class="section section-we-do-2 section-first">
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/"><span class="typcn typcn-home-outline"></span>&nbsp;</a></li>
+          <li><a href="/packs"><span class="typcn typcn-flow-children"> Packs</span></a></li>
+        </ol>    
+        <div class="row">
+            <div class="title add-animation">
+                <h2>Choose your plan</h2>
+                <div class="separator-container">
+                    <div class="separator line-separator"><span class="typcn typcn-wi-fi"></span></div>
+                </div>
+                <p>Plan subtext goes here</p>
+            </div>
+        </div>
+        <section class="container show-source">
+            <div class="row">
+                <div class="col-md-4" ng-repeat="pack in data">
+                    <div class="panel panel-info">
+                        <div class="panel-heading text-center">
+                            <div class="icon">
+                                <span class="typcn typcn-{{pack.typcn}}"></span>
+                            </div>
+                            <h3 class="">{{pack.title}}</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p class="lead" style="font-size:30px"><strong>ARS {{pack.price}} / año</strong></p>
+                        </div>
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item" ng-repeat="line in lines[$index]"><span ng-bind-html="line | sanitize"></li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-{{pack.color}}" href="/packs/{{pack.slug}}">Learn more</a>
+                        </div><!--/panel-footer-->
+                    </div><!--/panel-->
+                </div><!--/col-->
+            </div><!--/row-->
+        </section><!--/container-->
+            
+    </div>
+</section>

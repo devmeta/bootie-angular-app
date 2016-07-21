@@ -1,0 +1,71 @@
+ <section class="container section-first">
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/admin/dash"><span class="typcn typcn-device-desktop"></span></a></li>
+          <li><a href="/admin/users"><span class="typcn typcn-user"></span> Cuentas</a></li>
+          <li class="active"><a href=""><span class="typcn typcn-user green"></span> {{data.title}}</a></li>
+        </ol>
+        <div class="row">
+            <div class="add-animation text-left">
+                <h2 class="text-center"><span class="typcn typcn-edit green"></span> {{data.title}}</h2>
+                <div class="separator-container">
+                    <div class="separator line-separator"><span class="typcn typcn-wi-fi"></span></div>
+                </div>
+                <form class="form col-md-8" ng-submit="submit()">
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input id="title" type="text" class="form-control" ng-model="data.title">
+                    </div>
+                    <div class="form-group">
+                        <label for="login">Nombre de usuario</label>
+                        <input id="login" type="text" class="form-control" ng-model="data.login">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input id="email" type="text" class="form-control" ng-model="data.email">
+                    </div>                   
+                    <label for="caption">Descripción</label>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <summernote airMode id="caption" ng-model="data.caption"></summernote>
+                        </div>
+                    </div>
+
+                    <div class="well">
+                        <input type="submit" class="btn btn-success" value="Actualizar"> 
+                        <input type="reset" class="btn btn-warning" value="Limpiar"></input>
+                    </div>                                 
+                </form>
+                <div class="col-md-4">
+                    <h5><span class="typcn typcn-tags"></span> Tags </h5>
+                    <div ng-controller="tageditor" data-namespace="user" class="text-left tags">
+                        <div class="input-group">
+                          <input type="text" id="tags-add" class="form-control" placeholder="news promos etc ..." />
+                          <span class="input-group-btn">
+                            <button type="button" class="btn  btn-primary" ng-click="tag_add()"><span class="typcn typcn-tag"></span></button>
+                          </span>
+                        </div>
+                        <div class="tags-included">
+                            <a href="" ng-click="tag_exclude(tag)" class="label label-success label-badge btn-tag-included" ng-repeat="tag in included">
+                                {{tag}}
+                            </a>
+                        </div>
+                        <div class="tags-excluded">
+                            <a href="" ng-click="tag_include(tag)" class="label label-info label-badge btn-tag-excluded" ng-repeat="tag in excluded">
+                                {{tag}}
+                            </a>                            
+                        </div>
+                    </div><hr>
+                    <h5><span class="typcn typcn-attachment-outline"></span> Archivos</h5>
+                    <form 
+                        action="/upload" 
+                        data-namespace="user" 
+                        data-domain="users" 
+                        class="dropzone" 
+                        dropzone="" 
+                        id="file-dropzone"></form>
+                </div>                
+            </div>
+        </div>
+    </div>
+</section>

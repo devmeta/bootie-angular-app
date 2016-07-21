@@ -1,0 +1,105 @@
+
+<div class="section section-header">
+    <a class="over-area color-presentation" href="/{{header[0].slug}}">
+        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 pad-fix">
+            <div class="parallax pattern-image">
+                <div class="page-bg cover" ng-if="header[0].files[0].name" data-ng-style="{'background-image':'url({{baseurl}}/upload/posts/cp/{{header[0].files[0].name}})'}"></div>
+                <div class="container">
+                    <div class="content">
+                        <div class="" ng-if="header[0].files[1].name">
+                            <img class="" src="{{baseurl}}/upload/posts/cp/{{header[0].files[1].name}}">
+                        </div>             
+                        <h2>{{header[0].title}}</h2>
+                        <h3><span class="page-title">{{header[0].caption}}</span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 pad-fix">
+        <a class="" href="/{{header[1].slug}}">
+            <div class="parallax parallax-row pattern-image">
+                <div class="page-bg" ng-if="header[1].files[0].name" data-ng-style="{'background-image':'url({{baseurl}}/upload/posts/cp/{{header[1].files[0].name}})'}"></div>
+                <div class="container">
+                    <div class="content">
+                        <h3 class="">{{header[1].title}}</h3>
+                        <h5 class="">{{header[1].caption}}</h5>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a class="" href="/{{header[2].slug}}">
+            <div class="full-image parallax-row pattern-image">
+                <div class="page-bg" ng-if="header[2].files[0].name" data-ng-style="{'background-image':'url({{baseurl}}/upload/posts/cp/{{header[2].files[0].name}})'}"></div>
+                <div class="container">
+                    <div class="content">
+                        <h3 class="">{{header[2].title}}</h3>
+                        <h5 class="">{{header[2].caption}}</h5>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div><div class="clearfix"></div>
+
+
+    <a href="" data-scroll="true" data-id="#whatWeDo" class="scroll-arrow hidden-xs hidden-sm" data-external="true">
+    <span class="typcn typcn-chevron-right"></span>
+    </a>
+</div><div class="clearfix"></div>
+
+<div class="section section-we-do-2" id="whatWeDo">
+    <div class="container">
+        <div class="row">
+            <div class="title add-animation">
+                <h2>Choose your plan</h2>
+                <div class="separator-container">
+                    <div class="separator line-separator"><span class="typcn typcn-wi-fi"></span></div>
+                </div>
+                <p>Plan subtext here</p>
+            </div>
+        </div>
+
+        <section class="container show-source">
+            <div class="row">
+                <div class="col-md-4" ng-repeat="pack in packs">
+                    <div class="panel panel-info">
+                        <div class="panel-heading text-center">
+                            <div class="icon">
+                                <span class="typcn typcn-{{pack.typcn}}"></span>
+                            </div>
+                            <h3 class="">{{pack.title}}</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p class="lead" style="font-size:30px"><strong>ARS {{pack.price}} / año</strong></p>
+                        </div>
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item" ng-repeat="line in lines[$index]"><span ng-bind-html="line | sanitize"></li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-{{pack.color}}" href="/packs/{{pack.slug}}">Learn more</a>
+                        </div><!--/panel-footer-->
+                    </div><!--/panel-->
+                </div><!--/col-->
+            </div><!--/row-->
+        </section><!--/container-->
+    </div>
+</div>
+
+<a href="/{{post.slug}}" ng-repeat="post in middle">
+    <div class="section section-header">
+        <div class="parallax pattern-image">
+            <div class="page-bg show" style="background-image:url({{baseurl}}/upload/posts/cp/{{post.files[0].name}})"></div>
+            <div class="container">
+                <div class="content t35 text-center">
+                    <div class="col-lg-4 col-md-4" ng-if="post.files[1].name">
+                        <img class="" src="{{baseurl}}/upload/posts/th/{{post.files[1].name}}">
+                    </div>
+                    <div class="col-lg-8 col-md-8 text-left">
+                        <h2>{{post.title}}</h2>
+                        <h3><span>{{post.caption}}</span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>

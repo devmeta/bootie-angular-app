@@ -1,0 +1,46 @@
+<section class="container section-first">
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/admin/dash"><span class="typcn typcn-device-desktop"></span></a></li>
+          <li class="active"><a href=""><span class="typcn typcn-edit green"></span> Posts</a></li>
+        </ol>
+        <div class="row">
+            <div class="title">
+                <h2><span class="typcn typcn-edit green"></span> Posts</h2>
+                <div class="separator-container">
+                    <div class="separator line-separator"><span class="typcn typcn-wi-fi"></span></div>
+                </div>
+                <p>Posts on this system. </p>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-2 text-right">
+                        <a href="/admin/posts/create" class="btn btn-success">Create</a>
+                    </div>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" ng-model="search" placeholder="Escriba para filtrar" ng-model="search.name">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="row in data | filter: search">
+                    <a href="/admin/posts/{{row.id}}">
+                        <div class="tile-box cover text-bg" data-ng-style="{'background-image':'url({{baseurl}}/upload/posts/th/{{row.files[0].name}})'}">
+                            <h4><span class="typcn typcn-edit"></span> {{row.title}}</h4>
+
+                            <div class="text-left">
+                                <span class="typcn typcn-link"></span> {{row.slug}} <br>
+                                <span class="typcn typcn-tags"></span> {{row.tags}} <br>
+                                <span class="typcn typcn-attachment" ng-if="row.files"></span> {{row.files.length}} <br>
+                                <span class="typcn typcn-user"></span> {{row.author}} <br>
+                                <span class="typcn typcn-sort-alphabetically"></span> {{row.wcount}} <br>
+                                <span class="typcn typcn-calendar"></span> {{ row.created | readableTime }} <br>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="alert alert-info alert-icon">
+                    <span class="typcn typcn-info"></span> 
+                    <p>You can use tags to categorize.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

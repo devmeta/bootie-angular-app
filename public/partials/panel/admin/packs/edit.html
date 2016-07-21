@@ -1,0 +1,54 @@
+ <section class="container section-first">
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/admin/dash"><span class="typcn typcn-device-desktop"></span></a></li>
+          <li class="active"><a href="/admin/packs"><span class="typcn typcn-gift green"></span> Packs</a></li>
+        </ol>
+        <div class="row">
+            <div class="add-animation text-left">
+                <h2 class="text-center">
+                    <span class="typcn typcn-edit green"></span> {{data.title}}
+                    <a href="" ng-click="delete()">
+                        <span class="typcn typcn-times-outline"></span>
+                    </a>
+                </h2>
+                <div class="separator-container">
+                    <div class="separator line-separator"><span class="typcn typcn-wi-fi"></span></div>
+                </div>
+                <form class="form" ng-submit="submit()">
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input id="title" type="text" class="form-control" ng-model="data.title">
+                    </div>
+                    <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <input id="slug" type="text" class="form-control" ng-model="data.slug">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Precio</label>
+                        <input id="price" type="text" class="form-control" ng-model="data.price">
+                    </div>
+                    <div class="form-group">
+                        <label for="caption">Introducción</label>
+                        <textarea id="caption" type="text" class="form-control" ng-model="data.caption"></textarea>
+                    </div>                    
+                    <div class="form-group">
+                        <label for="content">Descripción</label>
+                        <textarea id="content" type="text" class="form-control" ng-model="data.content"></textarea>
+                    </div>  
+                    <label for="fulltext">Texto</label>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <summernote airMode id="fulltext" ng-model="data.fulltext"></summernote>
+                        </div>
+                    </div>
+
+                    <div class="well">
+                        <input type="submit" class="btn btn-success" value="Actualizar"> 
+                        <input type="reset" class="btn btn-warning" value="Limpiar"></input>
+                    </div>                                 
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

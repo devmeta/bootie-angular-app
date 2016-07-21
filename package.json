@@ -1,0 +1,11 @@
+{
+  "name": "GProject",
+  "version": "0.0.1",
+  "description": "This is the final project for Globant bootcamp",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "request": "latest",
+    "body-parser": "~1.15.1"
+  }
+}

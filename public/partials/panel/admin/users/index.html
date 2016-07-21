@@ -1,0 +1,33 @@
+<section class="container section-first">
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/admin/dash"><span class="typcn typcn-device-desktop"></span></a></li>
+          <li class="active"><a href=""><span class="typcn typcn-user green"></span> Users</a></li>
+        </ol>
+        <div class="row">
+            <div class="title">
+                <h2><span class="typcn typcn-user green"></span> Users</h2>
+                <div class="separator-container">
+                    <div class="separator line-separator"><span class="typcn typcn-wi-fi"></span></div>
+                </div>
+                <p>These are the users registered on this site.</p>
+                <div class="col-md-12">
+                    <input class="form-control" type="text" ng-model="search" placeholder="Escriba para filtrar" ng-model="search.name">
+                </div>                
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="row in data | filter: search">
+                    <a href="/admin/users/{{row.id}}">
+                        <div class="tile-box">
+                            <h4><span class="typcn typcn-user"></span> {{row.title}}</h4>
+                            <div class="text-left">
+                            <small><span class="typcn typcn-user"></span> {{row.login}}</small><br>
+                            <small><span class="typcn typcn-group"></span> {{row.group.title}}</small><br>
+                            <small><span class="typcn typcn-cog"></span> {{row.role.title}}</small><br>
+                            <small><span class="typcn typcn-calendar"></span> {{ row.created | readableTime }}</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

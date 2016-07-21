@@ -1,0 +1,26 @@
+ <section class="container section-first">
+    <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="/admin/dash"><span class="typcn typcn-device-desktop"></span></a></li>
+          <li><a href="/admin/web"><span class="typcn typcn-globe"></span> Página web</a></li>
+          <li class="active"><a href="/admin/posts"><span class="typcn typcn-edit green"></span> Artículos</a></li>
+        </ol>
+        <div class="row">
+            <div class="add-animation text-left">
+                <h2 class="text-center"><span class="typcn typcn-edit green"></span> Nuevo artículo</h2>
+                <div class="separator-container">
+                    <div class="separator line-separator"><span class="typcn typcn-wi-fi"></span></div>
+                </div>
+                <form class="form" ng-submit="submit()">
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input id="title" type="text" class="form-control input-lg" ng-model="data.title">
+                    </div>
+                    <div class="well">
+                        <input type="submit" class="btn btn-success" value="Continuar"> 
+                    </div>                                 
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
