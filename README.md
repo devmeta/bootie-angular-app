@@ -6,6 +6,16 @@ You can see it online [here](http://bootie-angularjs.devmeta.net)
 
 You can download the API [here](https://github.com/devmeta/bootie-angular-api)
 
+## Features
+
+- Basic Backend provided
+- Posts module
+- Users module
+- Packs module
+- Summernote plugin
+- Dropzone plugin
+- Tageditor plugin
+
 ## Installation
 
 ### Config
