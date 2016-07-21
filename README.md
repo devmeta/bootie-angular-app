@@ -4,7 +4,7 @@ You can see it online [here](http://bootie-angularjs.devmeta.net)
 
 ## Download API
 
-You can download the API [here](https://github.com/devmeta/bootie-angular-api)
+You can download the API here [Bootie PHP7 + AngularJS Api example](https://github.com/devmeta/bootie-angular-api)
 
 ## Features
 
