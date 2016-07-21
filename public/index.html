@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/css/typicons/font/typicons.min.css" />
     <link rel="stylesheet" href="/css/summernote.css" ng-if="AuthService.isAuthenticated" />
     <link rel="stylesheet" href="/css/dropzone.css" ng-if="AuthService.isAuthenticated" />
-    <link rel="stylesheet" href="/css/mapbox.css" ng-if="AuthService.isAuthenticated" />
     <link rel="stylesheet" href="/css/animations.css" />
     <link rel="stylesheet" href="/css/gibson.css" />
     <link rel="stylesheet" href="/css/rubick.css" />
@@ -53,7 +52,7 @@
                         <a target="_blank" href="https://twitter.com/Project">
                             <span class="typcn typcn-social-twitter"></span>
                         </a>
-                        <a target="_blank" href="mailto:info@Project.com.ar">
+                        <a target="_blank" href="mailto:info@Project.com">
                             <span class="typcn typcn-mail"></span>
                         </a>
                         <a href="" title="Cerrar sesión" data-placement="right" ng-click="logout()" ng-if="jwt"><span class="typcn typcn-key-outline"></span></a>
@@ -77,7 +76,6 @@
     <script src="/js/angular-storage.min.js" ></script>
     <script src="/js/angular-readable-time.js" ></script>
     <script src="/js/angular-summernote.js" ng-if="AuthService.isAuthenticated"></script>
-    <script src="/js/mapbox.js" ng-if="AuthService.isAuthenticated"></script>
     <script src="/js/jquery-ui-1.10.4.custom.min.js" ng-if="AuthService.isAuthenticated"></script>
     <script src="/js/angular-dropzone.js" ng-if="AuthService.isAuthenticated"></script>
     <script src="/js/summernote.js" ng-if="AuthService.isAuthenticated"></script>
