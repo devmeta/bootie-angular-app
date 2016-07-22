@@ -1,9 +1,10 @@
 (function() {
   'use strict';
   angular.module('readableTime', []).filter('readableTime', function() {
-    return function(seconds) {
+    return function(unixtime) {
       var day, format, hour, minute, month, week, year;
-      seconds = parseInt(seconds/1000000, 10);
+      var now = Math.round(new Date().getTime()/1000);
+      var seconds = parseInt((now - unixtime),10);
       minute = 60;
       hour = minute * 60;
       day = hour * 24;
