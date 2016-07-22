@@ -42,12 +42,12 @@ angular.module('controllers', [])
                 $rootScope.jwt = jwt;
                 $location.path('credential');
                 $timeout(function(){
-                    $window.location.href = '/singin';
+                    $window.location.href = '/signin';
                 },2000);
             }
         });
     };
-    
+
     $scope.logout = function () {
         $http.defaults.headers.common['X-Auth-Token'] =  '';
         delete $localStorage.jwt;
