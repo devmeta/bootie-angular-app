@@ -21,7 +21,7 @@ You can download the API here [Bootie PHP7 + AngularJS Api example](https://gith
 ### Config
 
 ```
-nano ./app/config.js
+nano ./public/app/config.js
 ```
 
 Set up proper path to previously installed and configured [Bootie PHP7 + AngularJS Api example](https://github.com/devmeta/bootie-angular-api)
@@ -29,7 +29,7 @@ Set up proper path to previously installed and configured [Bootie PHP7 + Angular
 ```
 app.constant('urls', {
    BASE: 'http://bootie-api.url',
-   BASE_API: 'http://bootie-api/v1'
+   BASE_API: 'http://bootie-api.url/v1'
 });
 ```
 
