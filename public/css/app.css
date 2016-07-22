@@ -36,7 +36,7 @@
     box-sizing: border-box;
 }
 .onoffswitch-inner:before {
-    content: "SI";
+    content: "ON";
     height: 40px;
     line-height: 3em;
 
@@ -46,7 +46,7 @@
     text-align: left;
 }
 .onoffswitch-inner:after {
-    content: "NO";
+    content: "OFF";
     height: 40px;
     line-height: 3em;
     padding-right: 10px;
