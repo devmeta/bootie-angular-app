@@ -16,9 +16,9 @@
                 <div class="separator-container">
                     <div class="separator line-separator"><span class="typcn typcn-wi-fi"></span></div>
                 </div>
-                <form class="form" ng-submit="submit()">
+                <form class="form col-md-8" ng-submit="submit()">
                     <div class="form-group">
-                        <label for="title">Título</label>
+                        <label for="title">Title</label>
                         <input id="title" type="text" class="form-control" ng-model="data.title">
                     </div>
                     <div class="form-group">
@@ -26,18 +26,18 @@
                         <input id="slug" type="text" class="form-control" ng-model="data.slug">
                     </div>
                     <div class="form-group">
-                        <label for="price">Precio</label>
+                        <label for="price">Price</label>
                         <input id="price" type="text" class="form-control" ng-model="data.price">
                     </div>
                     <div class="form-group">
-                        <label for="caption">Introducción</label>
+                        <label for="caption">Caption</label>
                         <textarea id="caption" type="text" class="form-control" ng-model="data.caption"></textarea>
                     </div>                    
                     <div class="form-group">
-                        <label for="content">Descripción</label>
+                        <label for="content">Feature list</label>
                         <textarea id="content" type="text" class="form-control" ng-model="data.content"></textarea>
                     </div>  
-                    <label for="fulltext">Texto</label>
+                    <label for="fulltext">Content</label>
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <summernote airMode id="fulltext" ng-model="data.fulltext"></summernote>
@@ -45,8 +45,8 @@
                     </div>
 
                     <div class="well">
-                        <input type="submit" class="btn btn-success" value="Actualizar"> 
-                        <input type="reset" class="btn btn-warning" value="Limpiar"></input>
+                        <input type="submit" class="btn btn-success" value="Update"> 
+                        <input type="reset" class="btn btn-warning" value="Clear"></input>
                     </div>                                 
                 </form>
             </div>

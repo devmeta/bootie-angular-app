@@ -42,12 +42,12 @@ app.config(['$routeProvider','$httpProvider','$locationProvider',
                 controller: 'data'
             })
             .when('/admin/users', {
-                title: 'Cuentas',
+                title: 'Accounts',
                 templateUrl: 'partials/panel/admin/users/index.html',
                 controller: 'data'
             })
             .when('/admin/users/create', {
-                title: 'Cuentas',
+                title: 'Accounts',
                 templateUrl: 'partials/panel/admin/users/create.html',
                 controller: 'create'
             })
@@ -57,12 +57,12 @@ app.config(['$routeProvider','$httpProvider','$locationProvider',
                 controller: 'data'
             })      
             .when('/admin/posts', {
-                title: 'Cuentas',
+                title: 'Accounts',
                 templateUrl: 'partials/panel/admin/posts/index.html',
                 controller: 'data'
             })
             .when('/admin/posts/create', {
-                title: 'Cuentas',
+                title: 'Accounts',
                 templateUrl: 'partials/panel/admin/posts/create.html',
                 controller: 'create'
             })
@@ -72,12 +72,12 @@ app.config(['$routeProvider','$httpProvider','$locationProvider',
                 controller: 'data'
             }) 
             .when('/admin/packs', {
-                title: 'Cuentas',
+                title: 'Accounts',
                 templateUrl: 'partials/panel/admin/packs/index.html',
                 controller: 'data'
             })
             .when('/admin/packs/create', {
-                title: 'Cuentas',
+                title: 'Accounts',
                 templateUrl: 'partials/panel/admin/packs/create.html',
                 controller: 'create'
             })
