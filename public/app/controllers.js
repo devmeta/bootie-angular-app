@@ -8,7 +8,7 @@ angular.module('controllers', [])
   }
 })
 
-.controller('auth', function ($scope, $localStorage, $rootScope, $location, $http, ApiService,AuthService) {
+.controller('auth', function ($scope, $localStorage, $rootScope, $timeout, $location, $http, ApiService,AuthService) {
     $scope.login = {};
     $scope.signup = {};
     $scope.jwt = $localStorage.jwt ? JSON.parse($localStorage.jwt) : false;
@@ -29,9 +29,9 @@ angular.module('controllers', [])
             }
         });
     };
-    $scope.signup = {email:'',password:'',name:'',phone:'',address:''};
+    $scope.signup = {email:'',pass:'',title:'',phone:'',address:'',city:''};
     $scope.signUp = function (customer) {
-        ApiService.post('/signUp', {
+        ApiService.post('/register', {
             customer: customer
         }).then(function (results) {
             ApiService.toast(results);
@@ -41,9 +41,13 @@ angular.module('controllers', [])
                 $localStorage.jwt = JSON.stringify(jwt);
                 $rootScope.jwt = jwt;
                 $location.path('credential');
+                $timeout(function(){
+                    $window.location.href = '/singin';
+                },2000);
             }
         });
     };
+    
     $scope.logout = function () {
         $http.defaults.headers.common['X-Auth-Token'] =  '';
         delete $localStorage.jwt;

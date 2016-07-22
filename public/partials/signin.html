@@ -2,26 +2,26 @@
     <div class="col-sm-12">
         <ol class="breadcrumb">
           <li><a href="/main"><span class="typcn typcn-home-outline"></span></a></li>
-          <li class="active"><a href=""><span class="typcn typcn-key-outline green"></span> Iniciar sesión</a></li>
+          <li class="active"><a href=""><span class="typcn typcn-key-outline green"></span> Signin</a></li>
         </ol>
     </div>
-    <h1 class="page-header"><span class="typcn typcn-key-outline green"></span> Iniciar sesión</h1>
+    <h1 class="page-header"><span class="typcn typcn-key-outline green"></span> Signin</h1>
     <div class="col-sm-10 col-sm-offset-1">
         <div id="login-box" class="login-box visible widget-box no-border">
             <div class="widget-body">
                 <div class="widget-main">
                     <form name="loginForm" class="form-horizontal" role="form" ng-if="!AuthService.isAuthenticated">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="email"> Email / Tel </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="email"> Login, phone or email </label>
                             <div class="col-sm-7">
                                <span class="block input-icon input-icon-right">
-                                    <input type="text" class="form-control" placeholder="Email / Phone" name="email" ng-model="login.email" required focus/>
+                                    <input type="text" class="form-control" placeholder="kburgess@jourrapide.com" name="email" ng-model="login.email" required focus/>
                                     <i class="ace-icon fa fa-user"></i>
                                 </span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="password"> Contraseña </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="password"> Password </label>
                             <div class="col-sm-7">
                                <span class="block input-icon input-icon-right">
                                     <input type="password" class="form-control" placeholder="Password" ng-model="login.password" required/>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="password"> Recordarme en este dispositivo </label>
+                            <label class="col-sm-3 control-label no-padding-right" for="password"> Remember </label>
 
                             <div class="col-sm-7 text-right">
                                 <div class="onoffswitch">
@@ -49,18 +49,18 @@
                                 <div class="col-sm-7">
                                     <button type="submit" class="width-35 pull-right btn" ng-click="doLogin(login)" data-ng-disabled="loginForm.$invalid">
                                         <i class="ace-icon fa fa-key"></i>
-                                        <span>Iniciar sesión</span>
+                                        <span>Start session</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div class="group-control">&nbsp;</div>
                         <div class="alert alert-success">
-                             No tienes una cuenta? <a href="/signup">Crear cuenta</a>
+                             Need an account? <a href="/signup">Create account</a>
                             </div>
                     </form>
 
-                    <div class="alert alert-success" ng-if="AuthService.isAuthenticated">Ya tienes una sesión activa ¿deseas finalizar la sesión? <a href="" ng-click="logout();">Logout</a></div>
+                    <div class="alert alert-success" ng-if="AuthService.isAuthenticated">You have one active session on this site. Wanna end session anyway? <a href="" ng-click="logout();">Logout</a></div>
                     <div class="group-control">&nbsp;</div>
                     
                 </div><!-- /widget-main -->

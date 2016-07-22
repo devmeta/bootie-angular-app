@@ -6,9 +6,9 @@ app.config(['$routeProvider','$httpProvider','$locationProvider',
 
         $routeProvider.
 
-            when('/login', {
+            when('/signin', {
                 title: 'Login',
-                templateUrl: 'partials/login.html',
+                templateUrl: 'partials/signin.html',
                 controller: 'auth'
             })
             .when('/support', {
@@ -134,7 +134,7 @@ app.config(['$routeProvider','$httpProvider','$locationProvider',
             var restrictedPage = privatePages.indexOf($filter('uri').segment(2)) != -1;
 
             if (restrictedPage && !$localStorage.jwt) {
-                return $location.path('/login');
+                return $location.path('/signin');
             }
         });
     });
