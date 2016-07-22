@@ -3,7 +3,7 @@
   angular.module('readableTime', []).filter('readableTime', function() {
     return function(seconds) {
       var day, format, hour, minute, month, week, year;
-      seconds = parseInt(seconds/1000, 10);
+      seconds = parseInt(seconds/1000000, 10);
       minute = 60;
       hour = minute * 60;
       day = hour * 24;
@@ -18,17 +18,17 @@
         case !(seconds < minute):
           return format(seconds, 'second');
         case !(seconds < hour):
-          return format(Math.floor(seconds / minute), 'minuto');
+          return format(Math.floor(seconds / minute), 'minute');
         case !(seconds < day):
-          return format(Math.floor(seconds / hour), 'hora');
+          return format(Math.floor(seconds / hour), 'hour');
         case !(seconds < week):
-          return format(Math.floor(seconds / day), 'día');
+          return format(Math.floor(seconds / day), 'day');
         case !(seconds < month):
-          return format(Math.floor(seconds / week), 'semana');
+          return format(Math.floor(seconds / week), 'week');
         case !(seconds < year):
-          return format(Math.floor(seconds / month), 'mes');
+          return format(Math.floor(seconds / month), 'month');
         default:
-          return format(Math.floor(seconds / year), 'año');
+          return format(Math.floor(seconds / year), 'year');
       }
     };
   });
